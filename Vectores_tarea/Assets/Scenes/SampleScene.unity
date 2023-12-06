@@ -900,10 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixorirntationcar: -90
   orientationcar: 0
-  displacement: {x: 0.4, y: 0, z: 0}
-  angle: 50
-  rotationAxis: 0
-  rotationAxiswheels: 0
+  displacement: {x: 1, y: 0, z: 0.5}
   wheel1: {fileID: 1713300120}
   posicion_wheel1: {x: -1.89, y: -0.49, z: 0.95}
   wheel2: {fileID: 1290596656}
@@ -912,10 +909,6 @@ MonoBehaviour:
   posicion_wheel3: {x: 1.9, y: -0.49, z: -0.95}
   wheel4: {fileID: 1083223962}
   posicion_wheel4: {x: -1.89, y: -0.49, z: -0.95}
-  angle_Right_wheels: -90
-  rotationAxis_Right_wheels: 1
-  angle_Left_wheels: 90
-  rotationAxis_Left_wheels: 1
   scale: {x: 0.4, y: 0.4, z: 0.4}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
