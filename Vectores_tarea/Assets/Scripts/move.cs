@@ -1,3 +1,6 @@
+//Ian Luis Vázquez Morán A01027225
+//Codigo para modificar el comportamiento de un objeto (automovil) en unity 
+//al cual se le anexionan otros 4 objetos (llantas) como rotarlos, escalarlos o moverlos
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -102,7 +105,7 @@ public class move : MonoBehaviour
                                                     displacement.y,
                                                     displacement.z);*/
 
-        Matrix4x4 rotate=HW_Transforms.RotateMat(angle*Time.time,rotationAxis);
+        Matrix4x4 rotate=HW_Transforms.RotateMat(angle,rotationAxis);
 
         //Combine all matrix in single one
         Matrix4x4 composite = move*rotate*scalecar*rotatefixcar;
@@ -155,23 +158,15 @@ public class move : MonoBehaviour
         {
             Vector4 temp = new Vector4(baseVerticeswheel1[i].x, baseVerticeswheel1[i].y, baseVerticeswheel1[i].z, 1);
             newVerticeswheel1[i] = newcomposite * temp;
-        }
-        for (int i = 0; i < baseVerticeswheel2.Length; i++)
-        {
-            Vector4 temp = new Vector4(baseVerticeswheel2[i].x, baseVerticeswheel2[i].y, baseVerticeswheel2[i].z, 1);
-            newVerticeswheel2[i] = newcomposite2 * temp;
-        }
 
-        for (int i = 0; i < baseVerticeswheel3.Length; i++)
-        {
-            Vector4 temp = new Vector4(baseVerticeswheel3[i].x, baseVerticeswheel3[i].y, baseVerticeswheel3[i].z, 1);
-            newVerticeswheel3[i] = newcomposite3 * temp;
-        }
+            Vector4 temp2 = new Vector4(baseVerticeswheel2[i].x, baseVerticeswheel2[i].y, baseVerticeswheel2[i].z, 1);
+            newVerticeswheel2[i] = newcomposite2 * temp2;
 
-        for (int i = 0; i < baseVerticeswheel4.Length; i++)
-        {
-            Vector4 temp = new Vector4(baseVerticeswheel4[i].x, baseVerticeswheel4[i].y, baseVerticeswheel4[i].z, 1);
-            newVerticeswheel4[i] = newcomposite4 * temp;
+            Vector4 temp3 = new Vector4(baseVerticeswheel3[i].x, baseVerticeswheel3[i].y, baseVerticeswheel3[i].z, 1);
+            newVerticeswheel3[i] = newcomposite3 * temp3;
+
+            Vector4 temp4 = new Vector4(baseVerticeswheel4[i].x, baseVerticeswheel4[i].y, baseVerticeswheel4[i].z, 1);
+            newVerticeswheel4[i] = newcomposite4 * temp4;
         }
 
         // Aplicar nuevas coordenadas a las mallas de las ruedas
